@@ -28,7 +28,7 @@ const {
           <span class="brand__name">EAVEN</span>
         </a>
 
-        <nav class="menu" aria-label="Navigation principale">
+        <nav class="menu" id="mainMenu" aria-label="Navigation principale" aria-hidden="true">
           <a class="menu__link" href="/">Accueil</a>
           <a class="menu__link" href="/prestations">Prestations</a>
           <a class="menu__link" href="/packs">Packs</a>
@@ -36,10 +36,11 @@ const {
           <a class="menu__link" href="/contact">Contact</a>
         </nav>
 
-        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainMenu">
           <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
         </button>
       </div>
+      <div class="menu-backdrop" aria-hidden="true"></div>
     </header>
 
     <main id="contenu"><slot /></main>

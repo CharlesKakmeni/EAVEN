@@ -38,8 +38,12 @@ img,svg{display:block;max-width:100%}
 .lead{color:var(--muted);max-width:70ch}
 
 /* Header (fluide) */
-.site-header{position:absolute;inset:0 0 auto 0;height:72px;z-index:50;display:flex;align-items:center;padding-top:env(safe-area-inset-top);background:transparent;transition:background-color .5s ease, box-shadow .5s ease, backdrop-filter .5s ease}
-.site-header.is-sticky{position:sticky;top:0;background:rgba(234,227,216,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:var(--shadow-soft)}
+.site-header{position:fixed;top:0;left:0;right:0;height:calc(72px + env(safe-area-inset-top));z-index:60;display:flex;align-items:center;padding:env(safe-area-inset-top) 0 0;background:transparent;backdrop-filter:blur(0);-webkit-backdrop-filter:blur(0);box-shadow:none;transition:background-color .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;pointer-events:auto}
+.site-header::before{content:"";position:absolute;inset:0;background:rgba(234,227,216,.85);opacity:0;transition:opacity .35s ease;border-bottom:1px solid rgba(22,32,43,.06);pointer-events:none;z-index:0}
+.site-header.is-sticky::before{opacity:1}
+.site-header.is-sticky{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:var(--shadow-soft)}
+.site-header .container{position:relative;z-index:1}
+.site-header .nav{padding:0 24px;width:100%;margin-inline:auto}
 .nav{display:flex;align-items:center;justify-content:space-between;width:100%}
 .brand{display:inline-flex;align-items:center;gap:10px}
 .brand__logo{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--sage-700);box-shadow:var(--shadow-soft)}
@@ -49,6 +53,13 @@ img,svg{display:block;max-width:100%}
 .menu a:hover,.menu a.active{opacity:1;border-bottom-color:var(--sage-700)}
 .nav-toggle{display:none;width:44px;height:38px;border:0;background:transparent;cursor:pointer}
 .nav-toggle__bar{display:block;height:2px;margin:7px 6px;background:#0b1f17;border-radius:2px}
+.menu-backdrop{position:fixed;inset:0;z-index:40;background:rgba(14,23,19,.32);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .28s ease}
+.menu-backdrop.is-visible{opacity:1;pointer-events:auto}
+body.is-menu-open{overflow:hidden;touch-action:none;overscroll-behavior:none}
+
+main{padding-top:calc(72px + env(safe-area-inset-top))}
+.hero:first-of-type{margin-top:calc(-72px - env(safe-area-inset-top))}
+main > .section:first-of-type:not(.hero){padding-top:56px}
 
 /* HERO */
 .bg-gradient{position:relative;overflow:hidden;color:#0b1f17;background:linear-gradient(90deg,var(--sage-900) 0%,var(--sage-700) 28%,var(--sage-500) 48%,#CBBFAE 74%,var(--paper) 100%)}
@@ -119,9 +130,29 @@ img,svg{display:block;max-width:100%}
 /* Responsive */
 @media (max-width:1020px){
   .nav-toggle{display:block}
-  .menu{position:fixed;inset:calc(72px + env(safe-area-inset-top)) 0 0 0;background:linear-gradient(90deg,var(--sage-900) 0%, var(--sage-700) 55%, var(--sage-500) 100%);display:grid;gap:16px;padding:18px 24px;transform:translateY(-110%);opacity:0;pointer-events:none;transition:transform .3s,opacity .3s}
+  .menu{
+    position:fixed;
+    top:calc(72px + env(safe-area-inset-top) + 12px);
+    right:calc(18px + env(safe-area-inset-right));
+    left:calc(18px + env(safe-area-inset-left));
+    background:linear-gradient(90deg,var(--sage-900) 0%, var(--sage-700) 55%, var(--sage-500) 100%);
+    display:grid;
+    gap:16px;
+    padding:20px 22px calc(20px + env(safe-area-inset-bottom));
+    border-radius:18px;
+    box-shadow:0 20px 36px rgba(16,24,21,.26);
+    transform:translateY(-24px) scale(.94);
+    transform-origin:top right;
+    opacity:0;
+    pointer-events:none;
+    transition:transform .28s ease,opacity .28s ease;
+    z-index:50;
+    max-height:calc(100vh - (72px + env(safe-area-inset-top) + 48px));
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+  }
   .menu a{color:#fff;font-size:1.08rem;border-bottom:0}
-  .menu.menu--open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .menu.menu--open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto}
   .hero{padding-top:120px}
 }
 
