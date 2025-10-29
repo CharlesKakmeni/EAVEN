@@ -1,0 +1,68 @@
+---
+const {
+  title = "EAVEN • Agence de marketing digital",
+  description = "Sites web, SEO, Ads & analytics pour indépendants et PME.",
+} = Astro.props;
+---
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#274C3E" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="container nav">
+        <a class="brand" href="/" aria-label="Accueil EAVEN">
+          <span class="brand__logo" aria-hidden="true">E</span>
+          <span class="brand__name">EAVEN</span>
+        </a>
+
+        <nav class="menu" aria-label="Navigation principale">
+          <a class="menu__link" href="/">Accueil</a>
+          <a class="menu__link" href="/prestations">Prestations</a>
+          <a class="menu__link" href="/packs">Packs</a>
+          <a class="menu__link" href="/a-propos">À propos</a>
+          <a class="menu__link" href="/contact">Contact</a>
+        </nav>
+
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="contenu"><slot /></main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container foot">
+        <div>
+          <div class="brand">
+            <span class="brand__logo" aria-hidden="true">E</span>
+            <span class="brand__name">EAVEN</span>
+          </div>
+          <p class="muted">Marketing digital & performance web pour indépendants et PME.</p>
+        </div>
+        <nav aria-label="Liens utiles" class="foot__links">
+          <a href="/prestations">Prestations</a>
+          <a href="/a-propos">À propos</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+      <div class="container sub">© {new Date().getFullYear()} EAVEN. Tous droits réservés.</div>
+    </footer>
+
+    <script src="/assets/js/app.js" defer></script>
+  </body>
+</html>

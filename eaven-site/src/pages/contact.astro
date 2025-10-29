@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="Contact • EAVEN" description="Parlez-nous de votre projet. Réponse sous 24h ouvrées.">
+  <section class="section">
+    <div class="container">
+      <p class="kicker">Contact</p>
+      <h1>Discutons de votre projet</h1>
+      <p class="lead">Décrivez votre besoin, on revient vers vous rapidement.</p>
+
+      <form class="form card" onsubmit="event.preventDefault(); alert('Merci ! Nous vous recontactons très vite.'); this.reset();" style="background:#fff;padding:22px;border-radius:16px;box-shadow:var(--shadow);margin-top:12px">
+        <div class="form__row">
+          <label class="form__field"><span>Nom</span><input required name="name" placeholder="Votre nom" /></label>
+          <label class="form__field"><span>Email</span><input required type="email" name="email" placeholder="vous@exemple.fr" /></label>
+        </div>
+        <label class="form__field"><span>Votre besoin</span><textarea required name="message" rows="6" placeholder="Objectifs, délais, budget…"></textarea></label>
+        <label class="form__consent"><input type="checkbox" required /><span>J’accepte d’être contacté par EAVEN.</span></label>
+        <button class="btn btn--outline" type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
