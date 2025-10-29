@@ -32,6 +32,9 @@ img,svg{display:block;max-width:100%}
 
 .container{max-width:1140px;margin-inline:auto;padding:0 24px}
 .section{padding:80px 0}
+.section--compact{padding:40px 0 28px}
+.section--tight{padding:48px 0}
+.section--compact + .section--tight{padding-top:32px}
 .grid{display:grid;gap:22px}
 .grid--3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .kicker{font-weight:800;letter-spacing:.5px;text-transform:uppercase;font-size:.85rem;color:var(--sage-700)}
@@ -109,6 +112,56 @@ main > .section:first-of-type:not(.hero){padding-top:56px}
 
 /* CTA */
 .cta{border-radius:var(--radius-lg);padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:linear-gradient(90deg,#DCCFBF 0%, #EAE3D8 100%);box-shadow:var(--shadow)}
+
+/* Offer cards */
+.offer-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:18px}
+.offer-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  padding:28px clamp(20px,4vw,32px);
+  background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(235,228,215,.92) 100%);
+  border-radius:22px;
+  border:1px solid color-mix(in oklab, var(--stone) 60%, transparent);
+  box-shadow:0 20px 34px rgba(22,32,43,.14);
+  transition:transform .35s ease, box-shadow .35s ease;
+  overflow:hidden;
+}
+.offer-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:6px;
+  background:linear-gradient(90deg,var(--sage-900) 0%,var(--sage-700) 45%,var(--sage-500) 100%);
+  opacity:.85;
+}
+.offer-card__tag{
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  color:var(--sage-900);
+  background:rgba(39,76,62,.12);
+  border:1px solid rgba(39,76,62,.14);
+  padding:6px 12px;
+  border-radius:999px;
+  align-self:flex-start;
+}
+.offer-card__title{margin:0;font-size:1.22rem;line-height:1.3}
+.offer-card__desc{margin:0;color:var(--muted);line-height:1.55}
+.offer-card__list{
+  margin:0;
+  padding-left:20px;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.offer-card__list li{font-size:.98rem}
+.offer-card__list li::marker{color:var(--sage-700);font-weight:600}
+.offer-card:hover{transform:translateY(-6px);box-shadow:0 28px 40px rgba(22,32,43,.18)}
+
 
 /* Form */
 .form{display:grid;gap:12px}

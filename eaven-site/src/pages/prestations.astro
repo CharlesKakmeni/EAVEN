@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Prestations • EAVEN" description="Sites, SEO, Ads, contenu, analytics, CRM & formation.">
-  <section class="section">
+  <section class="section section--compact">
     <div class="container">
       <p class="kicker">Catalogue</p>
       <h1>Prestations</h1>
@@ -10,49 +10,97 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section id="professionnels" class="section reveal">
+    <section id="particuliers" class="section section--tight reveal">
     <div class="container">
-      <p class="kicker">Professionnels</p>
-      <h2>Accompagnement pour les organisations</h2>
-      <p class="lead">Des expériences digitales pensées pour votre performance et votre crédibilité.</p>
-      <div class="grid grid--3" style="margin-top:24px">
-        <article class="card">
-          <h3>Site internet professionnel</h3>
-          <p>Conception de sites vitrines et corporate sur-mesure : architecture, UX, conversions et suivi analytics.</p>
+      <p class="kicker">Particuliers</p>
+      <h2>Créations digitales personnelles</h2>
+      <p class="lead">Mariage, anniversaire, baptême, ou simple envie de partager vos souvenirs ? 
+      </br>EAVEN conçoit pour vous des sites événementiels personnalisés et élégants, pour sublimer vos plus beaux moments.</p>
+      <div class="offer-grid">
+        <article class="offer-card">
+          <span class="offer-card__tag">Événement</span>
+          <h3 class="offer-card__title">Sites événementiels personnalisés</h3>
+          <p class="offer-card__desc">Créez un espace intime et chaleureux où vos invités peuvent découvrir votre histoire, s’informer et partager vos souvenirs.</p>
+          <ul class="offer-card__list">
+            <li>Timeline, infos pratiques, RSVP en ligne</li>
+            <li>Galerie photo et playlist intégrée</li>
+            <li>Design unique aux couleurs de votre histoire</li>
+          </ul>
         </article>
-        <article class="card">
-          <h3>Création de contenu & communication digitale</h3>
-          <p>Editorial, social media, newsletters et campagnes omnicanales pour une présence cohérente et régulière.</p>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Invitations</span>
+          <h3 class="offer-card__title">Invitations & livres d’or digitaux</h3>
+          <p class="offer-card__desc">Modernes, écologiques et interactives, les invitations digitales permettent d’inviter vos proches en un clic. Le livre d’or numérique prolonge la magie : vos proches laissent messages, photos et vœux en ligne.</p>
+          <ul class="offer-card__list">
+            <li>Formulaire de réponse simple et sécurisé</li>
+            <li>Murs de messages, audio, vidéo et polaroids</li>
+            <li>Export des souvenirs en PDF ou album imprimé</li>
+          </ul>
         </article>
-        <article class="card">
-          <h3>Référencement SEO & maintenance</h3>
-          <p>Optimisations techniques, sémantique, netlinking et maintenance proactive pour rester visible et performant.</p>
-        </article>
-        <article class="card">
-          <h3>Identité visuelle / branding</h3>
-          <p>Positionnement de marque, chartes graphiques, guidelines et supports pour une image forte et durable.</p>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Souvenirs</span>
+          <h3 class="offer-card__title">Albums photo & souvenirs en ligne</h3>
+          <p class="offer-card__desc">Une expérience privée pour partager vos moments forts à tout moment. Accessible depuis un téléphone ou un ordinateur, votre album devient un souvenir vivant à revisiter à tout moment.</p>
+          <ul class="offer-card__list">
+            <li>Galeries haute qualité avec chapitres narratifs</li>
+            <li>Espace protégé par mot de passe ou invitations</li>
+            <li>Mini-films, timelines et anecdotes interactives</li>
+          </ul>
         </article>
       </div>
     </div>
   </section>
-
-  <section id="particuliers" class="section reveal">
+ 
+  <section id="professionnels" class="section section--tight reveal">
     <div class="container">
-      <p class="kicker">Particuliers</p>
-      <h2>Créations digitales personnelles</h2>
-      <p class="lead">Des projets élégants et mémorables pour célébrer vos moments forts.</p>
-      <div class="grid grid--3" style="margin-top:24px">
-        <article class="card">
-          <h3>Sites événementiels personnalisés</h3>
-          <p>Pages élégantes pour mariages, célébrations ou projets personnels avec RSVP et infos pratiques.</p>
+      <p class="kicker">Professionnels</p>
+      <h2>Accompagnement pour les professionnels</h2>
+      <p class="lead">Des expériences digitales pensées pour votre performance et votre crédibilité.</p>
+      <div class="offer-grid">
+        <article class="offer-card">
+          <span class="offer-card__tag">Site & Produit</span>
+          <h3 class="offer-card__title">Site internet professionnel</h3>
+          <p class="offer-card__desc">De la page vitrine à la boutique en ligne, nous concevons des sites modernes, rapides et intuitifs. Notre mission :</p>
+          <ul class="offer-card__list">
+            <li>Offrir un outil qui reflète votre savoir-faire.</li>
+            <li>Inspire confiance et génère de nouvelles opportunités.</li>
+            <li>Design responsive et parcours optimisés.</li>
+          </ul>
         </article>
-        <article class="card">
-          <h3>Invitations & livres d’or digitaux</h3>
-          <p>Supports interactifs pour convier vos proches et rassembler leurs messages, photos et souvenirs.</p>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Contenu & Com</span>
+          <h3 class="offer-card__title">Création de contenu digital</h3>
+          <p class="offer-card__desc">Démarquez-vous grâce à une communication claire, régulière et authentique. EAVEN vous aide à :</p>
+          <ul class="offer-card__list">
+            <li>Définir votre ton.</li>
+            <li>Créer vos visuels.</li>
+            <li>Animer vos réseaux sociaux.</li>
+          </ul>
         </article>
-        <article class="card">
-          <h3>Albums photo et souvenirs en ligne</h3>
-          <p>Galeries sécurisées et immersives pour partager vos moments forts avec ceux qui comptent.</p>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Trafic & SEO</span>
+          <h3 class="offer-card__title">Référencement & maintenance</h3>
+          <p class="offer-card__desc">Optimisations techniques, sémantiques et netlinking pour rester visible et performant.</p>
+          <ul class="offer-card__list">
+            <li>Audit SEO complet (technique + contenu)</li>
+            <li>Roadmap de corrections & monitoring mensuel</li>
+            <li>Maintenance applicative & support prioritaire</li>
+          </ul>
+        </article>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Branding</span>
+          <h3 class="offer-card__title">Identité visuelle & branding</h3>
+          <p class="offer-card__desc">Votre image de marque est au cœur de votre succès. EAVEN vous accompagne dans :</p>
+          <ul class="offer-card__list">
+            <li>Création de logos, palettes, typographies.</li>
+            <li>Brand book, templates & guidelines internes.</li>
+            <li>Workshop ADN de marque & tonalité éditoriale.</li>
+          </ul>
         </article>
       </div>
     </div>
