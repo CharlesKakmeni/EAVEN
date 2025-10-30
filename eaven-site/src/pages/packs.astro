@@ -2,38 +2,50 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Packs • EAVEN" description="Des offres packagées et simples pour démarrer vite.">
-  <section class="section">
+  <section class="section section--compact">
     <div class="container">
       <p class="kicker">Packs</p>
       <h1>Offres packagées</h1>
       <p class="lead">Parce que chaque projet mérite une attention unique, nous avons imaginé des packs clairs et personnalisables. </p>
+    </div>
+  </section>
 
-      <div class="grid grid--3" style="margin-top:24px">
-        <article class="card" style="background:#fff;padding:22px;border-radius:16px;box-shadow:var(--shadow)">
-          <h3>Pack Pro Start</h3>
-          <ul>
-            <li>Site vitrine</li>
-            <li>SEO de base</li>
-            <li>Google My Business</li>
-            <li>Contact & formulaire</li>
-            <li>Intégration réseaux</li>
-            <li>1h de formation pour la prise en main</li>
+  <section class="section section--tight reveal">
+    <div class="container">
+      <div class="offer-grid">
+        <article class="offer-card">
+          <span class="offer-card__tag">Lancement</span>
+          <h3 class="offer-card__title">Pack Pro Start</h3>
+          <p class="offer-card__desc">Tout le nécessaire pour rendre votre activité visible rapidement et convaincre vos prospects.</p>
+          <ul class="offer-card__list">
+            <li>Site vitrine moderne et responsive</li>
+            <li>SEO de base & optimisation Google My Business</li>
+            <li>Formulaire de contact complet & intégration réseaux</li>
+            <li>1h de formation pour une prise en main autonome</li>
           </ul>
         </article>
-        <article class="card" style="background:#fff;padding:22px;border-radius:16px;box-shadow:var(--shadow)">
-          <h3>Pack Premium</h3>
-          <ul>
-            <li>Site complet (vitrine ou boutique)</li>
-            <li>Identité visuelle (logo + charte simplifiée)</li>
-            <li>10 visuels réseaux</li>
-            <li>Pptions e-commerce</li>
-            <li>1 mois de support</li>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Croissance</span>
+          <h3 class="offer-card__title">Pack Premium</h3>
+          <p class="offer-card__desc">Une approche globale pour travailler votre image, votre contenu et vos performances commerciales.</p>
+          <ul class="offer-card__list">
+            <li>Site complet (vitrine ou boutique) avec parcours optimisés</li>
+            <li>Identité visuelle (logo + mini charte)</li>
+            <li>10 visuels prêts pour vos réseaux sociaux</li>
+            <li>Options e-commerce sur mesure</li>
+            <li>1 mois de support et suivi des performances</li>
           </ul>
         </article>
-        <article class="card" style="background:#fff;padding:22px;border-radius:16px;box-shadow:var(--shadow)">
-          <h3>Pack Express</h3>
-          <ul>
-            <li>Mini-site en une page (landing page) - idéal pour un évènement ou une offre spéciale</li>
+
+        <article class="offer-card">
+          <span class="offer-card__tag">Express</span>
+          <h3 class="offer-card__title">Pack Express</h3>
+          <p class="offer-card__desc">Idéal pour une campagne limitée ou un évènement : on va droit à l’essentiel avec un impact maximum.</p>
+          <ul class="offer-card__list">
+            <li>Landing page convaincante livrée en un temps record</li>
+            <li>Argumentaire, call-to-action et formulaires optimisés</li>
+            <li>Intégration analytics & tracking indispensables</li>
           </ul>
         </article>
       </div>

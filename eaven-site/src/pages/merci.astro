@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+// Ton endpoint Formspree
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvgvbdpv";
 ---
 <BaseLayout title="Contact • EAVEN" description="Parlez-nous de votre projet. Réponse sous 24h ouvrées.">
@@ -9,7 +11,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvgvbdpv";
       <h1>Discutons de votre projet</h1>
       <p class="lead">Décrivez votre besoin, on revient vers vous rapidement.</p>
 
-      <!-- AUCUN onsubmit ici -->
+      <!-- Formulaire branché sur Formspree -->
       <form action={FORMSPREE_ENDPOINT} method="POST"
             class="form card"
             style="background:#fff;padding:22px;border-radius:16px;box-shadow:var(--shadow);margin-top:12px">
@@ -22,6 +24,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvgvbdpv";
 
           <label class="form__field">
             <span>Email</span>
+            <!-- IMPORTANT: name="email" pour Formspree -->
             <input required type="email" name="email" placeholder="vous@exemple.fr" />
           </label>
         </div>
@@ -36,17 +39,15 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvgvbdpv";
           <textarea required name="message" rows="6" placeholder="Objectifs, délais, budget…"></textarea>
         </label>
 
-        <!-- Honeypot anti-bot -->
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" />
+        <!-- Honeypot anti-bot (laisse vide et hors écran) -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px" />
 
-        <!-- Métadonnées -->
+        <!-- Métadonnées Formspree (optionnelles mais utiles) -->
         <input type="hidden" name="_subject" value="Nouveau message via eaven.fr" />
         <input type="hidden" name="_language" value="fr" />
-
-        <!-- Redirection : on met une URL ABSOLUE calculée côté client -->
-        <input id="fsp-redirect" type="hidden" name="_redirect" value="" />
-        <!-- compat rétro (certaines docs parlent de _next) -->
-        <input id="fsp-next" type="hidden" name="_next" value="" />
+        <!-- Si tu veux rediriger vers /merci après envoi, dé-commente la ligne suivante
+        <input type="hidden" name="_redirect" value="/merci" /> -->
 
         <label class="form__consent">
           <input type="checkbox" required />
@@ -57,13 +58,4 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvgvbdpv";
       </form>
     </div>
   </section>
-
-  <!-- On calcule l’URL absolue pour /merci (OK en local et en prod) -->
-  <script is:inline>
-    const url = `${location.origin}/merci`;
-    const r = document.getElementById('fsp-redirect');
-    const n = document.getElementById('fsp-next');
-    if (r) r.value = url;
-    if (n) n.value = url;
-  </script>
 </BaseLayout>
